@@ -8,7 +8,7 @@
   },
   "scripts": {
     "cypress:web": "npx cypress open",
-    "cypress:headless": "npx cypress run --browser brave"
+    "cypress:headless": "npx cypress run --browser electron"
   },
   "keywords": [],
   "author": "",
