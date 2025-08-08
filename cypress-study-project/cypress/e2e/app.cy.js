@@ -29,13 +29,13 @@ class RegisterForm {
   }
 
   onInputIconsCheck() {
-    this.elements.submitBtn().click()
     this.elements.titleInput().should('have.css', 'background-image').and('include', 'data:image/svg+xml')
     this.elements.titleInput().should('have.css', 'border-color').and('equal', errorColor)
   }
 }
 const registerForm = new RegisterForm()
 const errorColor = 'rgb(220, 53, 69)'
+
 describe('Image Registration', () => {
   describe('Submitting an image with invalid inputs', () => {
     after(() => {
@@ -50,21 +50,21 @@ describe('Image Registration', () => {
     })
 
     it(`When I enter ${input.title} in the title field`, () => {
-      // registerForm.typeTitle(input.title)
+      registerForm.typeTitle(input.title)
     })
     it(`Then I enter ${input.url} in the URL field`, () => {
-      // registerForm.typeUrl(input.url)
+      registerForm.typeUrl(input.url)
     })
     it(`Then I click the submit button`, () => {
-      // registerForm.onSubmitClick()
+      registerForm.onSubmitClick()
     })
     it(`Then I should see "Please type a title for the image" message above the title field`, () => {
-      // registerForm.onSubmitClick()
-      // registerForm.onTitleFeedbackCheck()
+      registerForm.onSubmitClick()
+      registerForm.onTitleFeedbackCheck()
 
     })
     it(`And I should see "Please type a valid URL" message above the imageUrl field`, () => {
-      // registerForm.onUrlFeedbackCheck()
+      registerForm.onUrlFeedbackCheck()
     })
     it(`And I should see an exclamation icon in the title and URL fields`, () => {
       registerForm.onInputIconsCheck()
